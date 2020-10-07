@@ -45,6 +45,7 @@ requirements:
 test:
   commands:
     - $R -e "library('striprtf')"
+    - "\"%R%\" -e \"library('striprtf')\""  # [win]
 
 about:
   home: https://github.com/kota7/striprtf
