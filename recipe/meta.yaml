@@ -15,6 +15,7 @@ source:
 build:
   skip: True  # [win]
   number: 1
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
