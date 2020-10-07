@@ -13,7 +13,7 @@ source:
   sha256: 8df187eafaa80c12317e3be3a7b4fe20ac4a89d0e91b21756ee645aaa85246e5
 
 build:
-  skip: True  # [win]
+  merge_build_host: True  # [win]
   number: 1
   noarch: generic
   rpaths:
