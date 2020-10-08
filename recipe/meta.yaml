@@ -13,18 +13,23 @@ source:
   sha256: 8df187eafaa80c12317e3be3a7b4fe20ac4a89d0e91b21756ee645aaa85246e5
 
 build:
-  skip: True  # [win]
-  number: 1
-  noarch: generic
+  merge_build_host: True  # [win]
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ posix }}filesystem        # [win]
     - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-rcpp
@@ -32,13 +37,15 @@ requirements:
     - r-stringr
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
     - r-rcpp
     - r-magrittr
     - r-stringr
 
 test:
   commands:
-    - $R -e "library('striprtf')"
+    - $R -e "library('striprtf')"           # [not win]
+    - "\"%R%\" -e \"library('striprtf')\""  # [win]
 
 about:
   home: https://github.com/kota7/striprtf
