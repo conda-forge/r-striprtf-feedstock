@@ -1,4 +1,4 @@
-{% set version = '0.5.2' %}
+{% set version = "0.5.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/striprtf_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/striprtf/striprtf_{{ version }}.tar.gz
-  sha256: 8df187eafaa80c12317e3be3a7b4fe20ac4a89d0e91b21756ee645aaa85246e5
+  sha256: 260c6c7027b3bfd9c5dc98e9a14e95b9429ff33954f6dd6bad40a2e506d40c37
 
 build:
-  merge_build_host: True  # [win]
-  number: 3
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -52,7 +52,7 @@ about:
   license: MIT
   summary: Extracts plain text from RTF (Rich Text Format) file.
   license_family: MIT
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
 
 extra:
   recipe-maintainers:
