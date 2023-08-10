@@ -1,4 +1,4 @@
-{% set version = "0.5.3" %}
+{% set version = "0.6.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/striprtf_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/striprtf/striprtf_{{ version }}.tar.gz
-  sha256: 260c6c7027b3bfd9c5dc98e9a14e95b9429ff33954f6dd6bad40a2e506d40c37
+  sha256: 70a5cab5643148740590f3bdd137c29435431834b8fbda488e83dc191c161fb1
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
