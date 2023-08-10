@@ -3,6 +3,7 @@ About r-striprtf-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-striprtf-feedstock/blob/main/LICENSE.txt)
 
+
 About r-striprtf
 ----------------
 
@@ -11,6 +12,7 @@ Home: https://github.com/kota7/striprtf
 Package license: MIT
 
 Summary: Extracts plain text from RTF (Rich Text Format) file.
+
 About r-striprtf
 ----------------
 
